@@ -19,8 +19,10 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "Imgur Gallery"
+rootProject.name = "imgur_gallery"
 include(":app")
 include(":core:model")
 include(":core:common")
+include(":core:network")
