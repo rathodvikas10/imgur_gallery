@@ -32,3 +32,4 @@ This has the following advantages :
 - Jetpack Compose
 - Dagger Hilt
 - Kotlin Serialization
+- Kotlin Coroutines
