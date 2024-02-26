@@ -12,6 +12,10 @@ Search the top images of the week from Imgur Gallery
 - Kotlin Version: 1.9.21
 - JVM Version: 17
 
+## Assumption
+The Imgur Gallery API odes not provide a fixed page size during search. \
+It is assumed that the device will display not more then 25 items. \
+
 ## Application Architecture
 The application architecture is designed using multi-modular approach. \
 This has the following advantages : 
@@ -26,7 +30,7 @@ This has the following advantages :
 - core:common: A common sharable code used across all the app and modules
 - core:network: Network client and API configuration and setup
 - core:data: Single source of truth for data
-
+- core:domain: Use case based on features
 
 ## Library:
 - Jetpack Compose
@@ -34,3 +38,4 @@ This has the following advantages :
 - Kotlin Serialization
 - Kotlin Coroutines
 - Retfofit
+- Paging 3
