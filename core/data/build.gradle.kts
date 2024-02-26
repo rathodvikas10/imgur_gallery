@@ -10,6 +10,7 @@ android {
 
 dependencies {
     api(projects.core.network)
+    api(projects.core.model)
 
     implementation(libs.androidx.paging.compose)
     implementation(libs.androidx.paging.testing)
