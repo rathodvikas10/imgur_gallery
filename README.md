@@ -33,3 +33,4 @@ This has the following advantages :
 - Dagger Hilt
 - Kotlin Serialization
 - Kotlin Coroutines
+- Retfofit
