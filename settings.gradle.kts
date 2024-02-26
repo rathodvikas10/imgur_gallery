@@ -23,3 +23,4 @@ dependencyResolutionManagement {
 rootProject.name = "Imgur Gallery"
 include(":app")
 include(":core:model")
+include(":core:common")
