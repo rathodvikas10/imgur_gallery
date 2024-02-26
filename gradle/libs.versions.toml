@@ -7,15 +7,20 @@ ksp = "1.9.21-1.0.16"
 androidDesugarJdkLibs = "2.0.4"
 androidxComposeCompiler = "1.5.7"
 
-# core
+# core-android
 coreKtx = "1.12.0"
+appcompat = "1.6.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
-composeBom = "2024.02.01"
-appcompat = "1.6.1"
-material = "1.11.0"
+
+# core
 hilt = "2.50"
 kotlinxCoroutines = "1.7.3"
+
+# UI
+material = "1.11.0"
+composeBom = "2024.02.01"
+pagingCompose = "3.2.1"
 
 # network
 retrofit = "2.9.0"
@@ -29,6 +34,7 @@ junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 turbine = "1.0.0"
 json = "20231013"
+pagingTesting = "3.2.1"
 
 [libraries]
 
@@ -38,6 +44,8 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinxCoroutines" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 # compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -46,6 +54,7 @@ androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }
 
 # hilt
 javax-inject = { module = "javax.inject:javax.inject", version = "1" }
@@ -78,8 +87,7 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-paging-testing = { group = "androidx.paging", name = "paging-testing", version.ref = "pagingTesting" }
 
 
 [plugins]
