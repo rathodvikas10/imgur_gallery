@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
@@ -23,7 +24,7 @@ fun SearchBar(
     searchLabelText: String,
     onSearch: (String) -> Unit
 ) {
-    var searchValue by remember { mutableStateOf(text) }
+    var searchValue by rememberSaveable { mutableStateOf(text) }
     OutlinedTextField(
         modifier = modifier,
         value = searchValue,

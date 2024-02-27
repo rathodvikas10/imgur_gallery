@@ -10,6 +10,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,7 +30,7 @@ fun ImgurGalleryScreen(
 ) {
 
     val uiState by viewModel.uiState.collectAsState()
-    var viewType by remember { mutableStateOf(ViewType.LIST) }
+    var viewType by rememberSaveable { mutableStateOf(ViewType.LIST) }
 
     val onViewChange: (ViewType) -> Unit = { type ->
         viewType = type
