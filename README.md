@@ -12,9 +12,31 @@ Search the top images of the week from Imgur Gallery
 - Kotlin Version: 1.9.21
 - JVM Version: 17
 
+## Build and Testing
+###### Build:
+APK Path: imgur_gallery/app/build/outputs/apk/release
+```
+./gradlew assembleRelease
+```
+###### Testing:
+```
+./gradlew testDebug
+```
+###### Lint:
+```
+./gradlew lint
+```
+
 ## Assumption
 The Imgur Gallery API odes not provide a fixed page size during search. \
-It is assumed that the device will display not more then 25 items. \
+It is assumed that the device will display not more than 25 items. 
+
+## TODO
+- Improve error handling
+- Improve loading state of items in pagination
+- Add next page loading state
+- Performance optimization
+- Static code analysis 
 
 ## Application Architecture
 The application architecture is designed using multi-modular approach. \
@@ -31,11 +53,16 @@ This has the following advantages :
 - core:network: Network client and API configuration and setup
 - core:data: Single source of truth for data
 - core:domain: Use case based on features
+- feature:gallery: Display top images of the week
 
 ## Library:
 - Jetpack Compose
 - Dagger Hilt
 - Kotlin Serialization
 - Kotlin Coroutines
-- Retfofit
+- Retfofit Okhttp
 - Paging 3
+- Coil
+- Robolectric
+- Turbine
+- JUnit4
