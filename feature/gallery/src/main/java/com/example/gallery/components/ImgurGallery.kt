@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import com.example.designsystem.theme.Dimens
@@ -27,7 +28,7 @@ fun ImgurGallery(
     }
 
     LazyVerticalGrid(
-        modifier = modifier,
+        modifier = modifier.testTag("LazyVerticalGrid"),
         columns = columns,
         contentPadding = PaddingValues(vertical = Dimens.p2),
         verticalArrangement = Arrangement.spacedBy(Dimens.p2),
