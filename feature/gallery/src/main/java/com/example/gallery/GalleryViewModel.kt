@@ -3,6 +3,7 @@ package com.example.gallery
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.example.common.network.AppDispatchers
 import com.example.common.network.Dispatcher
 import com.example.common.result.*
@@ -30,7 +31,7 @@ class GalleryViewModel @Inject constructor(
     @Dispatcher(AppDispatchers.IO)
     private val dispatcher: CoroutineDispatcher,
     private val useCase: GetTopWeekImagesUseCase
-): ViewModel() {
+) : ViewModel() {
 
     private val query = Channel<String>()
 
@@ -49,27 +50,22 @@ class GalleryViewModel @Inject constructor(
 
     fun search(query: String = "") {
         viewModelScope.launch {
-            if(query.isNotEmpty()) {
+            if (query.isNotEmpty()) {
                 this@GalleryViewModel.query.send(query)
             }
         }
     }
 
-    private fun processUiState(query: String) = useCase(query).asResult().map { result ->
-        when (result) {
-            is Result.Success -> {
-                GalleryUiState.Success(flowOf(result.data))
-            }
-            is Result.Error -> {
-                GalleryUiState.ErrorState(
-                    result.exception.message ?: "Unknown Error"
-                )
-            }
-            is Result.Loading -> {
-                GalleryUiState.Loading
+    private fun processUiState(query: String) = useCase(query)
+        .cachedIn(viewModelScope)
+        .asResult()
+        .map { result ->
+            when (result) {
+                is Result.Success -> GalleryUiState.Success(flowOf(result.data))
+                is Result.Error -> GalleryUiState.ErrorState(result.exception.message ?: "Unknown Error")
+                is Result.Loading -> GalleryUiState.Loading
             }
         }
-    }
 }
 
 sealed interface GalleryUiState {
