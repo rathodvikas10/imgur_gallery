@@ -34,7 +34,7 @@ class NetworkGalleryRepository @Inject constructor(
 
         val galleryPagingSource = GalleryPagingSource(
             query = query,
-            page = page,
+            initialPage = page,
             type = type,
             window = window,
             sort = sort,

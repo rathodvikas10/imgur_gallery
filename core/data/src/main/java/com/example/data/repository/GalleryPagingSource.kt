@@ -11,7 +11,7 @@ import com.example.network.NetworkDataSource
  */
 class GalleryPagingSource(
     private val query: String,
-    private val page: Int,
+    private val initialPage: Int,
     private val type: String,
     private val window: String,
     private val sort: String,
@@ -20,18 +20,18 @@ class GalleryPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ImgurAlbum> {
         return try {
-            val nextPage = params.key ?: page
+            val currentPage = params.key ?: initialPage
             val response = networkDataSource.searchImages(
                 sort,
                 window,
-                nextPage,
+                currentPage,
                 type,
                 query
             )
             LoadResult.Page(
                 data = response.map { it.toAlbum() },
-                prevKey = if (nextPage == page) null else nextPage,
-                nextKey = nextPage.plus(1)
+                prevKey = if (currentPage == initialPage) null else currentPage.minus(1),
+                nextKey = if(response.isEmpty()) null else currentPage.plus(1)
             )
         } catch (e: Exception) {
             LoadResult.Error(e)

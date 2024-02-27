@@ -28,6 +28,6 @@ data class RemoteConfig(
     }
 
     fun getClientId(): String {
-        return map[CLIENT_ID_KEY] ?: "b6ea73744146c8a"
+        return map[CLIENT_ID_KEY] ?: "83cbf6b767e4e1a"
     }
 }

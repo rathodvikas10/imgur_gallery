@@ -14,7 +14,7 @@ class GalleryPagingSourceTest {
         val fakeDataSource = FakeDataSource()
         val pageSource = GalleryPagingSource(
             query = "",
-            page = 1,
+            initialPage = 1,
             type = "",
             networkDataSource = fakeDataSource,
             sort = "",
@@ -39,7 +39,7 @@ class GalleryPagingSourceTest {
         val fakeDataSource = FakeDataSource()
         val pageSource = GalleryPagingSource(
             query = "",
-            page = 1,
+            initialPage = 1,
             type = "",
             networkDataSource = fakeDataSource,
             sort = "",

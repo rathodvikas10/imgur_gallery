@@ -12,15 +12,16 @@ coreKtx = "1.12.0"
 appcompat = "1.6.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
+androidxLifecycle = "2.7.0"
 
-# core
 hilt = "2.50"
 kotlinxCoroutines = "1.7.3"
-
+hiltNavigationCompose = "1.2.0"
 # UI
 material = "1.11.0"
 composeBom = "2024.02.01"
 pagingCompose = "3.2.1"
+coil = "2.6.0"
 
 # network
 retrofit = "2.9.0"
@@ -45,7 +46,6 @@ androidx-activity-compose = { group = "androidx.activity", name = "activity-comp
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinxCoroutines" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 # compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -55,11 +55,20 @@ androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+material-icons-compose = { group = "androidx.compose.material", name = "material-icons-extended"}
+
+# viewmodel
+androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
+androidx-lifecycle-runtimeTesting = { group = "androidx.lifecycle", name = "lifecycle-runtime-testing", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
 
 # hilt
 javax-inject = { module = "javax.inject:javax.inject", version = "1" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 
 # retrofit
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
@@ -104,3 +113,4 @@ app-hilt = { id = "app.android.hilt", version = "unspecified" }
 app-library = { id = "app.android.library", version = "unspecified" }
 app-library-compose = { id = "app.android.library.compose", version = "unspecified" }
 jvm-library = { id = "app.jvm.library", version = "unspecified" }
+app-feature = { id = "app.android.feature", version = "unspecified" }
