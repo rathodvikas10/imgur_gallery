@@ -21,6 +21,4 @@ dependencies {
     api(libs.androidx.ui.tooling.preview)
 
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

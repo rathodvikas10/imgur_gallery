@@ -9,16 +9,14 @@ androidxComposeCompiler = "1.5.7"
 
 # core-android
 coreKtx = "1.12.0"
-appcompat = "1.6.1"
-lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
 androidxLifecycle = "2.7.0"
 
 hilt = "2.50"
 kotlinxCoroutines = "1.7.3"
 hiltNavigationCompose = "1.2.0"
+
 # UI
-material = "1.11.0"
 composeBom = "2024.02.01"
 pagingCompose = "3.2.1"
 coil = "2.6.0"
@@ -31,22 +29,18 @@ kotlinxSerializationJson = "1.6.2"
 
 # test
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
 turbine = "1.0.0"
 json = "20231013"
 pagingTesting = "3.2.1"
 robolectric = "4.11.1"
 
 [libraries]
-
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+
 # core
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinxCoroutines" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 # compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -79,8 +73,6 @@ kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 
 # test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }

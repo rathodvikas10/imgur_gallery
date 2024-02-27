@@ -7,11 +7,13 @@ import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 
 private data class ShimmerAnimationData(
     private val isLightMode: Boolean
@@ -43,7 +45,6 @@ private data class ShimmerAnimationData(
 
 fun Modifier.shimmerAnimation(
     isLoadingCompleted: Boolean = false,
-    isLightModeActive: Boolean = true,
     widthOfShadowBrush: Int = 500,
     angleOfAxisY: Float = 270f,
     durationMillis: Int = 1000,
@@ -52,7 +53,7 @@ fun Modifier.shimmerAnimation(
         return this
     } else {
         return composed {
-
+            val isLightModeActive = isSystemInDarkTheme()
             val shimmerColors = ShimmerAnimationData(isLightMode = isLightModeActive).getColours()
 
             val transition = rememberInfiniteTransition(label = "")

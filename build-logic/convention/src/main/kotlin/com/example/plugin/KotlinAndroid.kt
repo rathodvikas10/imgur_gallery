@@ -49,6 +49,11 @@ internal fun Project.configureKotlinAndroid(
                 excludes += "/META-INF/{AL2.0,LGPL2.1}"
             }
         }
+        lint {
+            disable.addAll(
+                setOf("TypographyFractions", "TypographyQuotes", "Typos")
+            )
+        }
     }
 
     configureKotlin()

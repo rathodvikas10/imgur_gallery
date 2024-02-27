@@ -13,9 +13,6 @@ android {
             isIncludeAndroidResources = true
         }
     }
-    hilt {
-        enableAggregatingTask = true
-    }
 }
 
 dependencies {
