@@ -28,7 +28,7 @@ APK Path: imgur_gallery/app/build/outputs/apk/release
 ```
 
 ## Assumption
-The Imgur Gallery API odes not provide a fixed page size during search. \
+The Imgur Gallery API does not provide a fixed page size during search. \
 It is assumed that the device will display not more than 25 items. 
 
 ## TODO
